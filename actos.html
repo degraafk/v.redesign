@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#13261E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500..900;1,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <title>Actos · VOX</title></head><body>
 <div id="hdr"></div>
 <main><div class="wrap">
-<div class="phead"><div class="crumb"><a href="index.html">Inicio</a> / Actos</div><h1>Actos de campaña</h1><p>La campaña va del 13 al 27 de noviembre. Fechas de ejemplo para la maqueta.</p></div>
+<div class="phead"><div class="crumb"><a href="index.html">Inicio</a> / Actos</div><h1>Actos de campaña</h1><p>La campaña va del 13 al 27 de noviembre.</p></div>
 <div class="page"><div class="fsel"><label for="fp">Filtrar por provincia</label><select id="fp"></select></div><ul class="acts" id="al"></ul></div>
 </div></main>
 <div id="ftr"></div>
@@ -14,8 +14,7 @@
 <script>
 const fp=document.getElementById("fp"),al=document.getElementById("al");
 fp.innerHTML="<option value=''>Todas</option>"+[...new Set(ACTOS.map(a=>a.p))].sort().map(p=>"<option>"+p+"</option>").join("");
-function ics(a){const d=a.d.replace(/-/g,""),h=a.h.replace(":","")+"00";return "data:text/calendar;charset=utf8,"+encodeURIComponent("BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nDTSTART:"+d+"T"+h+"\nSUMMARY:"+a.t+" ("+a.p+")\nEND:VEVENT\nEND:VCALENDAR")}
 function draw(){const l=ACTOS.filter(a=>!fp.value||a.p===fp.value);
-al.innerHTML=l.length?l.map(a=>`<li><span class="d">${fmt(a.d)}</span><div><strong>${a.t}</strong><small>${a.p} · ${a.h}</small></div><a class="btn out" download="acto.ics" href="${ics(a)}">Añadir al calendario</a></li>`).join(""):'<li class="empty">No hay actos en esa provincia todavía.</li>';flow([...al.children])}
+al.innerHTML=l.length?l.map(actRow).join(""):'<li class="empty">No hay actos en esa provincia todavía.</li>';flow([...al.children])}
 fp.onchange=draw;draw();
 </script></body></html>

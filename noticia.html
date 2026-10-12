@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#13261E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500..900;1,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <title>Noticia · VOX</title></head><body>
 <div id="hdr"></div>
@@ -15,7 +15,7 @@ else{document.title=n.t+" · VOX";
 const rel=sorted().filter(x=>x.slug!==n.slug).slice(0,3);
 A.innerHTML=`<article class="art"><div class="crumb"><a href="index.html">Inicio</a> / <a href="noticias.html">Noticias</a> / ${n.c}</div>
 <h1>${n.t}</h1><div class="meta"><span class="t">${n.c}</span><time datetime="${n.d}">${fmt(n.d,1)}</time></div>
-<div class="hero-img ${n.g}${n.i?" has":""}"${n.i?` style="--img:url(${n.i});--pos:${n.o}"`:""} role="img" aria-label="${n.t}"></div>
+${n.i?`<div class="hero-img has" style="--img:url(${n.i});--pos:${n.o}" role="img" aria-label="${n.t}"></div>`:""}
 <div class="body">${n.b.map(p=>"<p>"+p+"</p>").join("")}</div>
 <div class="share"><button class="btn out" id="cp">Copiar enlace</button><a class="btn out" href="noticias.html">Volver a noticias</a></div></article>
 <div class="related"><h2>Más noticias</h2><div class="ngrid">${rel.map(ncard).join("")}</div></div>`;

@@ -1,5 +1,5 @@
 :root{--bg:#13261E;--bg2:#0e1c16;--surface:#1c3329;--ink:#edf5f0;--muted:#a2b9ae;--line:#2a4437;--green:#58D45A;--dark:#13261E;--r:6px;--max:1440px;--ease:cubic-bezier(.22,1,.36,1);
---display:"Inter","Helvetica Neue",Arial,sans-serif;--body:"Public Sans",system-ui,sans-serif}
+--display:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"Public Sans",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
@@ -387,3 +387,51 @@ details.prop summary:focus-visible{outline-offset:6px;border-radius:8px}
 .pbody{flex:1;display:flex;flex-direction:column}
 .pbody .go{margin-top:auto;align-self:flex-start;padding-top:.4rem}
 @media(max-width:1000px){.bento .p1 .nimg{min-height:240px}}
+
+/* ---- round 8: less template, more point of view ---- */
+/* radii follow hierarchy: photos big, text boxes medium, controls small */
+.btn,.join .btn,.form select,.fsel select,.burger{border-radius:10px}
+.box,details.prop,.count,.empty,.ncard{border-radius:14px}
+.ncard.pic,.art .hero-img,.pimg{border-radius:24px}
+canvas{border-radius:20px}.join{border-radius:28px}.tarjeta{border-radius:18px}
+
+/* links: underline, no arrows */
+.more{color:var(--ink);text-decoration:underline;text-decoration-color:var(--green);text-decoration-thickness:1px;text-underline-offset:6px;border-bottom:0;transition:text-decoration-thickness .3s var(--ease)}
+.more:hover{text-decoration-thickness:3px}
+.more::after{content:none}
+
+/* news cards: one structure, meta row instead of floating chip */
+.nimg::before{background:var(--img) var(--pos,center)/cover no-repeat}
+.nimg{aspect-ratio:16/10}
+.nmeta{display:flex;justify-content:space-between;gap:1rem;font-size:.85rem;color:var(--muted)}
+.nmeta .c{color:var(--ink);font-weight:600}
+.nbody h3{margin:.55rem 0 .5rem}
+.bento .p3{background:transparent}
+.bento .p3 .nimg{height:auto;aspect-ratio:16/10}
+.bento .p3 .nbody{padding:1.1rem 1.2rem 1.3rem}
+.meta .t{background:none;color:var(--ink);padding:0;border-radius:0;font-weight:600}
+
+/* pillars: photo-led, no box */
+.box.pillar{background:none;border:0;border-radius:0;padding:0;overflow:visible}
+.box.pillar:hover{background:none;box-shadow:none}
+.pimg{transition:box-shadow .35s var(--ease)}
+.pillar:hover .pimg{box-shadow:0 0 0 2px var(--green)}
+.pbody{padding:1.1rem .25rem 0}
+.pillar h3{font-size:1.6rem}
+
+/* campaign dates: typography instead of green chips and dot-strings */
+.acts li{grid-template-columns:5.5rem 1fr auto auto;gap:1.5rem}
+.acts .when b{display:block;font:800 2.4rem/1 var(--display);letter-spacing:-.02em}
+.acts .when span{display:block;margin-top:.25rem;color:var(--muted);font-size:.95rem}
+.acts .what small{display:block;margin-top:.15rem}
+.acts .hr{font:600 1.05rem var(--display);font-variant-numeric:tabular-nums}
+@media(max-width:640px){.acts li{grid-template-columns:4rem 1fr auto;gap:.5rem 1rem}.acts .btn{display:none}}
+
+/* membership card: flat, straight */
+.tarjeta{transform:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.tarjeta:hover{transform:none}
+
+/* lead story without photo: type does the work */
+.bento .p1 .nbody{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:1.6rem 1.8rem 1.9rem}
+.bento .p1:not(.pic) .nbody h3{font-size:clamp(2rem,3.6vw,3.3rem);line-height:1.02;max-width:22ch}
+.bento .p1:not(.pic) .nbody p{font-size:1.15rem}
