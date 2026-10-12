@@ -53,4 +53,4 @@ document.getElementById("ftr").outerHTML=`<footer id="contacto"><div class="wrap
 const nav=document.getElementById("nav"),bg=document.getElementById("burger");
 bg.onclick=()=>{const o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
 nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");bg.setAttribute("aria-expanded",false)}));
-const L=document.getElementById("latest");if(L)L.innerHTML=byPriority().slice(0,11).map(ncard).join("");
+const L=document.getElementById("latest");if(L){const all=byPriority(),pick=(p,n)=>all.filter(x=>x.p===p).slice(0,n);L.innerHTML=[...pick(1,1),...pick(2,2),...pick(3,3)].map(ncard).join("")};
