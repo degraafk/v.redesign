@@ -11,15 +11,15 @@ const NEWS=[
 {slug:"jornada-agraria",p:3,t:"Jornada con el sector agrario: menos papeleo, más campo",d:"2026-10-05",c:"Actos",g:"g1",s:"Agricultores y ganaderos trasladan sus principales preocupaciones.",b:["Una jornada de trabajo con profesionales del sector agrario para recoger sus propuestas sobre burocracia y costes.","Las conclusiones se publicarán en esta web.","Contenido de ejemplo para la maqueta."]}
 ];
 const PROPS=[
-{id:"economia",t:"Economía",s:"Menos trámites y menos cargas para quien emprende y contrata.",l:["Ventanilla única digital para empresas","Simplificar altas y licencias de autónomos","Reducir cargas sobre el trabajo y el ahorro"]},
-{id:"vivienda",t:"Vivienda",s:"Más oferta y más seguridad jurídica para propietarios e inquilinos.",l:["Liberar suelo y agilizar licencias","Plazos claros en los procesos de desahucio","Ayudas a la primera compra de jóvenes"]},
-{id:"campo-y-mar",t:"Campo y mar",s:"Menos burocracia para quien produce alimentos.",l:["Reducir informes y trámites agrarios","Defender los productos españoles en Bruselas","Más infraestructura hídrica"]},
-{id:"seguridad",t:"Seguridad",s:"Medios y respaldo para las fuerzas de seguridad.",l:["Más plantillas y mejor equipamiento","Coordinación entre cuerpos","Respuesta judicial más rápida"]},
-{id:"familia",t:"Familia",s:"Apoyo directo a quienes quieren formar una familia.",l:["Deducciones por hijo a cargo","Conciliación más flexible","Ayudas para familias numerosas"]},
-{id:"energia",t:"Energía",s:"Suministro estable y precios asumibles.",l:["Mix energético con todas las fuentes disponibles","Menos impuestos en la factura","Mejores redes eléctricas"]},
-{id:"educacion",t:"Educación",s:"Más exigencia y más libertad de elección.",l:["Evaluaciones comunes en todo el país","Libertad de elección de centro","Refuerzo de la formación profesional"]},
-{id:"sanidad",t:"Sanidad",s:"Menos esperas y una gestión más eficiente.",l:["Reducir listas de espera","Historia clínica común entre regiones","Mejores condiciones para el personal sanitario"]},
-{id:"europa",t:"España en Europa",s:"Una voz clara en las decisiones que afectan a cada provincia.",l:["Defensa de los intereses nacionales","Fondos europeos con transparencia","Cooperación con aliados europeos"]}
+{id:"economia",t:"Economía",s:"Menos trámites y menos cargas para quien emprende, contrata y ahorra.",m:[{t:"Ventanilla única digital",d:"Un solo punto de acceso para altas, licencias y obligaciones, sin pedir los mismos documentos varias veces."},{t:"Trámites más simples para autónomos",d:"Menos formularios y plazos más claros para quien trabaja por cuenta propia."},{t:"Menor carga sobre el trabajo",d:"Revisar los costes que pesan sobre contratar y sobre el ahorro de las familias."}]},
+{id:"vivienda",t:"Vivienda",s:"Más oferta de vivienda y más seguridad jurídica para propietarios e inquilinos.",m:[{t:"Más suelo disponible",d:"Poner suelo público y urbanizable en el mercado con plazos y criterios claros."},{t:"Licencias más rápidas",d:"Plazos máximos de resolución y seguimiento en línea de cada expediente."},{t:"Primera vivienda para jóvenes",d:"Ayudas y avales para facilitar la primera compra."}]},
+{id:"campo-y-mar",t:"Campo y mar",s:"Quitar burocracia a quienes producen nuestros alimentos.",m:[{t:"Menos papeleo",d:"Reducir informes y declaraciones duplicadas en explotaciones agrarias y pesqueras."},{t:"Defensa del producto español",d:"Una posición firme en Bruselas para proteger precios y condiciones de competencia."},{t:"Agua e infraestructuras",d:"Planificar y mantener las infraestructuras hídricas que necesita el campo."}]},
+{id:"seguridad",t:"Seguridad",s:"Medios, respaldo y coordinación para las fuerzas de seguridad.",m:[{t:"Plantillas y equipamiento",d:"Reforzar plantillas y renovar el material de los cuerpos de seguridad."},{t:"Coordinación entre cuerpos",d:"Compartir información y protocolos entre Policía, Guardia Civil y policías locales."},{t:"Justicia más ágil",d:"Acortar los plazos de respuesta judicial en los casos que afectan a la seguridad ciudadana."}]},
+{id:"familia",t:"Familia",s:"Apoyo directo a quienes quieren formar una familia.",m:[{t:"Deducciones por hijo a cargo",d:"Un apoyo fiscal claro y fácil de solicitar para las familias con hijos."},{t:"Conciliación más flexible",d:"Más flexibilidad horaria y teletrabajo donde sea posible."},{t:"Familias numerosas",d:"Ayudas específicas y reconocimiento en servicios y transporte."}]},
+{id:"energia",t:"Energía",s:"Un suministro estable y precios asumibles para hogares y empresas.",m:[{t:"Todas las fuentes disponibles",d:"Un mix energético que combine las tecnologías que den seguridad de suministro."},{t:"Menos impuestos en la factura",d:"Revisar los cargos e impuestos que encarecen la factura de la luz."},{t:"Mejores redes eléctricas",d:"Invertir en transporte y distribución para evitar cuellos de botella."}]},
+{id:"educacion",t:"Educación",s:"Más exigencia y más libertad de elección para las familias.",m:[{t:"Evaluaciones comunes",d:"Pruebas comparables en todo el país para conocer cómo avanza cada centro."},{t:"Libertad de elección de centro",d:"Que las familias puedan elegir el colegio que prefieren para sus hijos."},{t:"Formación profesional",d:"Reforzar la FP y su conexión con las empresas de cada zona."}]},
+{id:"sanidad",t:"Sanidad",s:"Menos esperas y una gestión más eficiente de los recursos.",m:[{t:"Reducir listas de espera",d:"Un plan con objetivos y seguimiento público de los tiempos de atención."},{t:"Historia clínica común",d:"Que tu historial médico te acompañe en cualquier comunidad autónoma."},{t:"Personal sanitario",d:"Mejores condiciones y estabilidad para quienes cuidan de nuestra salud."}]},
+{id:"europa",t:"España en Europa",s:"Una voz clara en las decisiones que afectan a cada provincia.",m:[{t:"Defensa de los intereses nacionales",d:"Presencia activa en las negociaciones que afectan a nuestros sectores."},{t:"Fondos con transparencia",d:"Seguimiento público de cómo se reparten y se usan los fondos europeos."},{t:"Cooperación con aliados",d:"Trabajo conjunto con los países con los que compartimos prioridades."}]}
 ];
 const ACTOS=[
 {d:"2026-11-14",t:"Mitin de arranque de campaña",p:"Madrid",h:"19:00"},
@@ -41,7 +41,6 @@ const on=h=>page===h?' class="on"':'';
 document.getElementById("hdr").outerHTML=`<header class="site-header"><div class="wrap bar">
 <a class="logo" href="index.html" aria-label="VOX, inicio"><img src="logo.svg" alt="VOX" width="68" height="33"></a>
 <nav id="nav" aria-label="Principal"><a href="noticias.html"${on("noticias.html")}>Noticias</a><a href="propuestas.html"${on("propuestas.html")}>Propuestas</a><a href="actos.html"${on("actos.html")}>Actos</a></nav>
-<a class="btn gold" href="#dona" data-donate>Donar</a>
 <a class="btn" href="index.html#participa">Únete</a>
 <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button></div></header>`;
 document.getElementById("ftr").outerHTML=`<footer id="contacto"><div class="wrap cols">
@@ -54,14 +53,14 @@ nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classLi
 const L=document.getElementById("latest");if(L)L.innerHTML=prio().slice(0,7).map(x=>ncard(x,1)).join("");
 
 /* ---- donativos: botón flotante + ventana ---- */
-document.body.insertAdjacentHTML("beforeend",`<button class="fab btn gold" data-donate aria-label="Donar">Donar</button>
+document.body.insertAdjacentHTML("beforeend",`<button class="dtab" data-donate aria-label="Donar">Donar</button>
 <dialog class="dlg" id="dlg" aria-labelledby="dt"><div class="dform"><button class="dx" id="dx" aria-label="Cerrar">×</button>
 <h2 id="dt">Apoya la campaña</h2><p>Tu donativo financia actos, material y presencia en cada provincia.</p>
 <div class="amts" role="group" aria-label="Importe">${[25,50,100,350].map(a=>`<button type="button" class="amt" data-a="${a}">${a} €</button>`).join("")}</div>
 <label class="oth">Otra cantidad<input type="number" id="oa" min="1" inputmode="numeric" placeholder="€"></label>
 <button type="button" class="btn gold lg" id="go">Donar <span id="ga">50 €</span></button>
 <p class="dnote" id="dn">Maqueta: aquí se conectaría la pasarela de pago. Antes de recibir donativos reales, revisa la normativa de financiación de partidos.</p></div></dialog>`);
-(()=>{const dlg=document.getElementById("dlg"),fab=document.querySelector(".fab"),oIn=document.getElementById("oa"),gAmt=document.getElementById("ga"),note=document.getElementById("dn");let amt=50;
+(()=>{const dlg=document.getElementById("dlg"),oIn=document.getElementById("oa"),gAmt=document.getElementById("ga"),note=document.getElementById("dn");let amt=50;
 const NOTE=note.textContent;
 const setA=a=>{amt=a;gAmt.textContent=a+" €";dlg.querySelectorAll(".amt").forEach(b=>b.classList.toggle("on",+b.dataset.a===a))};
 setA(50);
@@ -71,5 +70,4 @@ oIn.addEventListener("input",()=>{const v=Math.floor(+oIn.value);if(v>0){amt=v;g
 document.getElementById("dx").onclick=()=>dlg.close();
 dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
 document.getElementById("go").onclick=()=>{note.textContent="Gracias. Esto es una maqueta: no se ha realizado ningún cobro."};
-addEventListener("scroll",()=>fab.classList.toggle("show",scrollY>500),{passive:true});
 })();
