@@ -20,4 +20,7 @@ A.innerHTML=`<article class="art"><div class="crumb"><a href="index.html">Inicio
 <div class="share"><button class="btn out" id="cp">Copiar enlace</button><a class="btn out" href="noticias.html">Volver a noticias</a></div></article>
 <div class="related"><h2>Más noticias</h2><div class="ngrid">${rel.map(x=>ncard(x)).join("")}</div></div>`;
 document.getElementById("cp").onclick=e=>{navigator.clipboard&&navigator.clipboard.writeText(location.href);e.target.textContent="Enlace copiado"}}
-</script></body></html>
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="motion.js"></script>
+</body></html>

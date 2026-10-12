@@ -381,3 +381,10 @@ footer a{transition:transform .2s ease}footer a:hover{transform:translateX(5px);
  .side a.on{border-bottom-color:var(--green)}
  .psec{grid-template-columns:1fr}.pnum{font-size:3.5rem}
 }
+
+/* ---- GSAP support ---- */
+.gs{transition:none!important}
+.ln{display:block;overflow:hidden;padding:0 .14em .06em 0;margin-right:-.14em}
+.li{display:block;will-change:transform}
+.photo-hero{overflow:hidden}
+.photo-hero::before{inset:-10% 0;transform:translate3d(0,var(--py,0px),0) scale(var(--z,1));will-change:transform}

@@ -18,4 +18,7 @@ function ics(a){const d=a.d.replace(/-/g,""),h=a.h.replace(":","")+"00";return "
 function draw(){const l=ACTOS.filter(a=>!fp.value||a.p===fp.value);
 al.innerHTML=l.length?l.map(a=>`<li><span class="d">${fmt(a.d)}</span><div><strong>${a.t}</strong><small>${a.p} · ${a.h}</small></div><a class="btn out" download="acto.ics" href="${ics(a)}">Añadir al calendario</a></li>`).join(""):'<li class="empty">No hay actos en esa provincia todavía.</li>'}
 fp.onchange=draw;draw();
-</script></body></html>
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="motion.js"></script>
+</body></html>
