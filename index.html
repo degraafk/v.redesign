@@ -3,225 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VOX · Concepto de rediseño</title>
-<meta name="description" content="Propuesta de rediseño web: rápida, accesible y móvil primero.">
+<title>VOX · 29-N · Decide tú</title>
+<meta name="description" content="Elecciones generales del 29 de noviembre de 2026: fechas clave, cómo votar y propuestas.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#1B2B20">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#1B2B20; --surface:#233829; --ink:#eef4ee; --muted:#a7b9ab; --line:#33493a;
-  --green:#58D45A; --lime:#58D45A; --red:#a93a33; --gold:#e8b93a; --dark:#1B2B20;
-  --r:6px; --max:1180px;
-  --display:"Archivo",system-ui,sans-serif; --body:"Public Sans",system-ui,sans-serif;
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
-.wrap{width:min(100% - 2.5rem,var(--max));margin-inline:auto}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--ink);color:var(--bg);padding:.5rem 1rem;z-index:99}
-h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
-.flag{height:6px;background:linear-gradient(var(--red) 25%,var(--gold) 25% 75%,var(--red) 75%)}
-
-/* header */
-header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;gap:1.5rem;height:68px}
-.logo img{display:block;height:auto}
-.logo{font:900 2rem/1 var(--display);font-stretch:112%;letter-spacing:-.04em;color:var(--green);text-decoration:none}
-nav.main{display:flex;gap:.25rem;margin-left:auto}
-nav.main a{padding:.5rem .8rem;border-radius:6px;text-decoration:none;font-weight:500;font-size:.95rem}
-nav.main a:hover{background:var(--line)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font:600 1rem var(--body);padding:.8rem 1.4rem;border-radius:6px;text-decoration:none;transition:transform .15s,background .15s}
-.btn:active{transform:scale(.97)}
-.btn.primary{background:var(--green);color:var(--dark)}.btn.primary:hover{filter:brightness(1.1)}
-.btn.ghost{background:transparent;border:1.5px solid var(--ink)}
-.btn.gold{background:var(--gold);color:#241c00}
-.icon-btn{background:none;border:1px solid var(--line);width:42px;height:42px;border-radius:6px;cursor:pointer;color:var(--ink);font-size:1.1rem}
-.burger{display:none}
-@media(max-width:900px){
-  nav.main{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:1rem 1.25rem 1.5rem;border-bottom:1px solid var(--line)}
-  nav.main.open{display:flex}.burger{display:inline-block;margin-left:auto}.bar .btn.primary{display:none}
-}
-
-/* hero */
-.hero{padding:clamp(3rem,8vw,6.5rem) 0 3rem;display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:end}
-.hero h1{font-size:clamp(2.8rem,7.4vw,6rem);font-weight:900;font-stretch:118%}
-.hero h1 span{display:block;color:var(--green)}
-.hero p.lead{margin:1.5rem 0 2rem;max-width:34rem;color:var(--muted);font-size:1.2rem}
-.cta{display:flex;gap:.75rem;flex-wrap:wrap}
-.finder{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;box-shadow:0 20px 50px -30px rgba(0,0,0,.35)}
-.finder h2{font-size:1.5rem;font-weight:800;margin-bottom:.25rem}
-.finder p{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
-.finder input{width:100%;font:500 1rem var(--body);padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
-.finder ul{list-style:none;padding:0;margin-top:.75rem;max-height:210px;overflow:auto;display:flex;flex-wrap:wrap;gap:.4rem}
-.finder li button{font:500 .9rem var(--body);padding:.4rem .8rem;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
-.finder li button:hover,.finder li button[aria-pressed=true]{background:var(--green);color:var(--dark);border-color:var(--green)}
-#result{margin-top:1rem;padding:1rem;border-radius:6px;background:color-mix(in srgb,var(--lime) 18%,transparent);font-size:.95rem;min-height:3.5rem}
-@media(max-width:860px){.hero{grid-template-columns:1fr}}
-
-/* stripe: the one memorable element */
-.stripe-wrap{display:grid;grid-template-rows:25% 50% 25%;height:clamp(60px,9vw,120px);overflow:hidden}
-.stripe-wrap b{background:var(--red)}.stripe-wrap b:nth-child(2){background:var(--gold);transform-origin:left;animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
-@keyframes grow{from{transform:scaleX(0)}}
-
-section{padding:clamp(3rem,7vw,5.5rem) 0}
-.head{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
-.head h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:800;font-stretch:112%}
-.head a{font-weight:600;color:var(--green)}
-
-/* news */
-.news{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:1.25rem}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none}
-.card .img{aspect-ratio:16/10;background:linear-gradient(135deg,#2e5a38,#58D45A)}
-.card:nth-child(2) .img{background:linear-gradient(135deg,#7a2822,#d9a233)}
-.card:nth-child(3) .img{background:linear-gradient(135deg,#142019,#3a8d3c)}
-.card div.t{padding:1.1rem 1.2rem 1.3rem}
-.card time{font-size:.85rem;color:var(--muted)}
-.card h3{font-size:1.3rem;font-weight:700;margin-top:.35rem}
-.card.big h3{font-size:1.9rem}
-@media(max-width:860px){.news{grid-template-columns:1fr}}
-
-/* proposals */
-.props{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.25rem}
-details.prop{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.25rem 1.4rem}
-details.prop summary{font:700 1.2rem var(--display);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem}
-details.prop summary::after{content:"+";color:var(--green);font-size:1.5rem;line-height:1}
-details.prop[open] summary::after{content:"–"}
-details.prop p{margin-top:.8rem;color:var(--muted);font-size:.98rem}
-
-/* agenda */
-.agenda{list-style:none;padding:0;border-top:1px solid var(--line)}
-.agenda li{display:grid;grid-template-columns:90px 1fr auto;gap:1.5rem;align-items:center;padding:1.25rem 0;border-bottom:1px solid var(--line)}
-.agenda .d{font:800 1.1rem var(--display);color:var(--green)}
-.agenda strong{display:block;font-weight:600}.agenda span{color:var(--muted);font-size:.95rem}
-@media(max-width:600px){.agenda li{grid-template-columns:70px 1fr}.agenda .btn{display:none}}
-
-/* join */
-.join{background:var(--green);color:var(--dark);border-radius:10px;padding:clamp(2rem,5vw,4rem);display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center}
-.join h2{font-size:clamp(2rem,4.5vw,3.4rem);font-weight:900}
-.join p{margin:1rem 0 1.5rem;max-width:30rem}
-.cardmock{aspect-ratio:1.586;border-radius:8px;background:var(--dark);padding:1.5rem;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(-4deg);box-shadow:0 30px 60px -20px #000a;color:#fff;transition:transform .4s}
-.cardmock:hover{transform:rotate(0)}
-.cardmock b{font:900 2rem var(--display);color:var(--green)}.cardmock small{opacity:.8;letter-spacing:.1em}
-@media(max-width:860px){.join{grid-template-columns:1fr}.cardmock{max-width:340px}}
-
-footer{border-top:1px solid var(--line);padding:3rem 0;color:var(--muted);font-size:.95rem}
-footer .cols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem}
-footer a{text-decoration:none;display:block;padding:.15rem 0}footer a:hover{color:var(--green)}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<div class="flag" aria-hidden="true"></div>
-
-<header class="top">
-  <div class="wrap bar">
-    <a class="logo" href="/" aria-label="VOX, inicio"><img src="logo.svg" alt="VOX" width="104" height="50"></a>
-    <nav class="main" id="nav" aria-label="Principal">
-      <a href="#provincia">En tu provincia</a>
-      <a href="#actualidad">Actualidad</a>
-      <a href="#propuestas">Propuestas</a>
-      <a href="#agenda">Agenda</a>
-      <a href="#europa">Europa</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-    <a class="btn primary" href="#afiliate">Afíliate</a>
-    <button class="icon-btn burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
-  </div>
-</header>
+<div id="hdr"></div>
 
 <main id="main">
-  <div class="wrap hero">
-    <div>
-      <h1>Tu voz,<span>en tu provincia.</span></h1>
-      <p class="lead">Encuentra a tu delegación, sigue la agenda y entérate de las propuestas sin buscar en diez menús.</p>
-      <div class="cta">
-        <a class="btn primary" href="#afiliate">Hazte afiliado</a>
-        <a class="btn ghost" href="#propuestas">Ver propuestas</a>
-      </div>
-    </div>
-    <aside class="finder" id="provincia" aria-labelledby="ft">
-      <h2 id="ft">¿De dónde eres?</h2>
-      <p>Escribe tu provincia y te mostramos tu delegación.</p>
-      <label class="skip" for="q">Buscar provincia</label>
-      <input id="q" type="search" placeholder="Madrid, Sevilla, Málaga…" autocomplete="off">
-      <ul id="list"></ul>
-      <div id="result" aria-live="polite">Elige una provincia para ver los datos de contacto.</div>
-    </aside>
+ <div class="wrap hero">
+  <div>
+   <div class="date" aria-hidden="true">29-N</div>
+   <h1>El 29-N, haz que tu voto pese.</h1>
+   <p class="lead">Menos burocracia, más vivienda y más seguridad. Conoce nuestro plan y súmate a la campaña.</p>
+   <div class="cta"><a class="btn" href="#participa">Únete a la campaña</a><a class="btn out" href="propuestas.html">Nuestro plan</a></div>
   </div>
-  <div class="stripe-wrap" aria-hidden="true"><b></b><b></b><b></b></div>
+  <aside class="count" aria-labelledby="ch">
+   <h2 id="ch">Cuenta atrás hasta el 29-N</h2>
+   <div class="cells" role="timer" aria-live="off">
+    <div><b id="cd">--</b><span>días</span></div><div><b id="ch2">--</b><span>horas</span></div><div><b id="cm">--</b><span>min</span></div><div><b id="cs">--</b><span>seg</span></div>
+   </div>
+   <p>La campaña va del 13 al 27 de noviembre. El domingo 29, vota.</p>
+  </aside>
+ </div>
 
-  <section id="actualidad"><div class="wrap">
-    <div class="head"><h2>Última hora</h2><a href="#">Todas las noticias</a></div>
-    <div class="news">
-      <a class="card big" href="#"><div class="img" role="img" aria-label="Imagen de ejemplo"></div><div class="t"><time datetime="2026-10-11">11 oct 2026</time><h3>Acto público en Estepona con cientos de asistentes</h3></div></a>
-      <a class="card" href="#"><div class="img"></div><div class="t"><time datetime="2026-10-09">9 oct 2026</time><h3>Nuevo buzón ciudadano contra la hiperregulación</h3></div></a>
-      <a class="card" href="#"><div class="img"></div><div class="t"><time datetime="2026-10-07">7 oct 2026</time><h3>Resumen semanal de la actividad en el Parlamento Europeo</h3></div></a>
-    </div>
-  </div></section>
+ <section id="noticias"><div class="wrap">
+  <div class="head"><h2>Última hora</h2><a class="more" href="noticias.html">Todas las noticias</a></div>
+  <div class="ngrid" id="latest"></div>
+ </div></section>
 
-  <section id="propuestas" style="padding-top:0"><div class="wrap">
-    <div class="head"><h2>Propuestas, sin letra pequeña</h2><a href="#">Descargar programa</a></div>
-    <div class="props">
-      <details class="prop" open><summary>Economía</summary><p>Menos trámites, menos impuestos para autónomos y pymes. Resumen en tres puntos y enlace al texto completo.</p></details>
-      <details class="prop"><summary>Vivienda</summary><p>Más suelo disponible, licencias más rápidas y seguridad jurídica para propietarios e inquilinos.</p></details>
-      <details class="prop"><summary>Campo y mar</summary><p>Simplificar la burocracia agraria y pesquera que hoy consume horas de trabajo.</p></details>
-      <details class="prop"><summary>Seguridad</summary><p>Refuerzo de plantillas y medios para las fuerzas de seguridad del Estado.</p></details>
-    </div>
-  </div></section>
 
-  <section id="agenda" style="padding-top:0"><div class="wrap">
-    <div class="head"><h2>Próximos actos</h2><a href="#">Ver calendario</a></div>
-    <ul class="agenda">
-      <li><span class="d">17 OCT</span><div><strong>Encuentro con afiliados</strong><span>Valencia · 19:00</span></div><a class="btn ghost" href="#">Añadir al calendario</a></li>
-      <li><span class="d">24 OCT</span><div><strong>Mesa informativa</strong><span>Sevilla · 11:00</span></div><a class="btn ghost" href="#">Añadir al calendario</a></li>
-      <li><span class="d">31 OCT</span><div><strong>Charla abierta</strong><span>Madrid · 18:30</span></div><a class="btn ghost" href="#">Añadir al calendario</a></li>
-    </ul>
-  </div></section>
 
-  <section id="afiliate" style="padding-top:0"><div class="wrap">
-    <div class="join">
-      <div>
-        <h2>Tu carnet, en el móvil.</h2>
-        <p>Afíliate en dos minutos y lleva el carnet digital en tu cartera del teléfono.</p>
-        <div class="cta"><a class="btn" style="background:var(--dark);color:var(--green)" href="#">Afiliarme</a><a class="btn ghost" style="color:var(--dark);border-color:var(--dark)" href="#">Colaborar con una donación</a></div>
-      </div>
-      <div class="cardmock" aria-hidden="true"><small>CARNET DE AFILIADO</small><b>VOX</b><small>NOMBRE APELLIDOS</small></div>
-    </div>
-  </div></section>
+ <section id="plan" class="alt"><div class="wrap">
+  <div class="head"><h2>Nuestro plan en tres ideas</h2><a class="more" href="propuestas.html">Ver todas las propuestas</a></div>
+  <div class="three">
+   <a class="box pillar" href="propuestas.html#economia"><h3>Menos burocracia</h3><p>Una ventanilla única digital y menos trámites para quien emprende, cultiva o contrata.</p><span class="go">Leer más</span></a>
+   <a class="box pillar" href="propuestas.html#vivienda"><h3>Más vivienda</h3><p>Más suelo, licencias más rápidas y seguridad jurídica para propietarios e inquilinos.</p><span class="go">Leer más</span></a>
+   <a class="box pillar" href="propuestas.html#seguridad"><h3>Más seguridad</h3><p>Más medios y respaldo para las fuerzas de seguridad y una respuesta judicial más rápida.</p><span class="go">Leer más</span></a>
+  </div>
+ </div></section>
+
+ <section id="propuestas"><div class="wrap">
+  <div class="head"><h2>Nuestras propuestas</h2><a class="more" href="propuestas.html">Ver todas las propuestas</a></div>
+  <div class="props">
+   <details class="prop" open><summary>Economía</summary><p>Menos trámites y menos cargas para quien emprende y contrata.</p><ul><li>Ventanilla única digital para empresas</li><li>Simplificar altas y licencias de autónomos</li></ul></details>
+   <details class="prop"><summary>Vivienda</summary><p>Más oferta y más seguridad jurídica.</p><ul><li>Liberar suelo y agilizar licencias</li><li>Ayudas a la primera compra de jóvenes</li></ul></details>
+   <details class="prop"><summary>Campo y mar</summary><p>Menos burocracia para quien produce alimentos.</p><ul><li>Reducir informes y trámites</li><li>Más infraestructura hídrica</li></ul></details>
+   <details class="prop"><summary>Seguridad</summary><p>Medios y respaldo para las fuerzas de seguridad.</p><ul><li>Más plantillas y mejor equipamiento</li><li>Coordinación entre cuerpos</li></ul></details>
+   <details class="prop"><summary>Familia</summary><p>Apoyo directo a quienes quieren formar una familia.</p><ul><li>Deducciones por hijo a cargo</li><li>Conciliación más flexible</li></ul></details>
+   <details class="prop"><summary>Energía y Europa</summary><p>Suministro estable y una voz clara en Bruselas.</p><ul><li>Precios asumibles en la factura</li><li>Fondos europeos con transparencia</li></ul></details>
+  </div>
+ </div></section>
+
+ <section id="actos" class="alt"><div class="wrap">
+  <div class="head"><h2>Actos de campaña</h2><a class="more" href="actos.html">Ver todos los actos</a></div>
+  <ul class="acts">
+   <li><span class="d">14 NOV</span><div><strong>Mitin de arranque</strong><small>Madrid · 19:00</small></div><a class="btn out" href="#">Añadir al calendario</a></li>
+   <li><span class="d">20 NOV</span><div><strong>Encuentro con vecinos</strong><small>Sevilla · 18:30</small></div><a class="btn out" href="#">Añadir al calendario</a></li>
+   <li><span class="d">27 NOV</span><div><strong>Cierre de campaña</strong><small>Valencia · 20:00</small></div><a class="btn out" href="#">Añadir al calendario</a></li>
+  </ul>
+ </div></section>
+
+ <section id="cartel"><div class="wrap tool">
+  <div>
+   <h2>Materiales de campaña</h2>
+   <p>Crea tu cartel con el lema y tu provincia, listo para redes o para imprimir.</p>
+   <form class="form" id="f">
+    <label>Lema<select id="slogan"><option>Decide tú.</option><option>Este 29-N, vota.</option><option>Tu voto cuenta.</option><option>Habla con tu voto.</option></select></label>
+    <label>Provincia<select id="prov"></select></label>
+    <button class="btn" type="submit">Crear cartel</button>
+    <a class="btn out" id="dl" download="cartel-29n.png" hidden>Descargar imagen</a>
+   </form>
+  </div>
+  <div class="preview"><canvas id="cv" width="1080" height="1350" role="img" aria-label="Vista previa del cartel"></canvas></div>
+ </div></section>
+
+ <section id="participa"><div class="wrap">
+  <div class="join">
+   <div><h2>El 29-N, cuenta contigo.</h2><p>Ayúdanos en campaña o el día de las elecciones. Hay sitio para todos.</p>
+    <div class="cta"><a class="btn" href="#">Quiero colaborar</a><a class="btn out" href="#">Hacer una donación</a></div></div>
+   <ul><li>Voluntariado de campaña</li><li>Apoderados e interventores</li><li>Reparto en tu barrio</li></ul>
+  </div>
+ </div></section>
 </main>
 
-<footer id="contacto"><div class="wrap cols">
-  <div><a class="logo" href="/" aria-label="VOX, inicio"><img src="logo.svg" alt="VOX" width="88" height="42"></a><p>Concepto de rediseño. Sin vínculo oficial.</p></div>
-  <div><a href="#">¿Qué es VOX?</a><a href="#">Manifiesto Patriots.eu</a><a href="#europa">VOX Europa</a><a href="#">VOX en el exterior</a></div>
-  <div><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a><a href="#">Accesibilidad</a></div>
-</div></footer>
+<div id="ftr"></div>
 
+<script src="site.js"></script>
 <script>
+// countdown (hora peninsular, 9:00 del 29-N)
+const T=new Date("2026-11-29T09:00:00+01:00");
+const $=id=>document.getElementById(id);
+function tick(){let d=Math.max(0,T-Date.now());
+ $("cd").textContent=Math.floor(d/864e5);$("ch2").textContent=String(Math.floor(d/36e5)%24).padStart(2,"0");
+ $("cm").textContent=String(Math.floor(d/6e4)%60).padStart(2,"0");$("cs").textContent=String(Math.floor(d/1e3)%60).padStart(2,"0")}
+tick();setInterval(tick,1000);
+// timeline status
+let nextSet=false;
+document.querySelectorAll("#tl li").forEach(li=>{
+ const end=new Date(li.dataset.end+"T23:59:59+01:00"),tag=li.querySelector(".tag");
+ if(end<Date.now()){li.classList.add("done");tag.textContent="Pasado"}
+ else if(!nextSet){nextSet=true;li.classList.add("next");tag.textContent="Próxima fecha"}
+ else tag.textContent="Pendiente";
+});
+// poster generator
 const PROV=["A Coruña","Álava","Albacete","Alicante","Almería","Asturias","Ávila","Badajoz","Baleares","Barcelona","Burgos","Cáceres","Cádiz","Cantabria","Castellón","Ceuta","Ciudad Real","Córdoba","Cuenca","Girona","Granada","Guadalajara","Gipuzkoa","Huelva","Huesca","Jaén","La Rioja","Las Palmas","León","Lleida","Lugo","Madrid","Málaga","Melilla","Murcia","Navarra","Ourense","Palencia","Pontevedra","Salamanca","S. C. Tenerife","Segovia","Sevilla","Soria","Tarragona","Teruel","Toledo","Valencia","Valladolid","Bizkaia","Zamora","Zaragoza"];
-const norm=s=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
-const list=document.getElementById("list"),q=document.getElementById("q"),res=document.getElementById("result");
-function render(f=""){
-  list.innerHTML="";
-  PROV.filter(p=>norm(p).includes(norm(f))).slice(0,f?12:10).forEach(p=>{
-    const li=document.createElement("li"),b=document.createElement("button");
-    b.type="button";b.textContent=p;b.setAttribute("aria-pressed","false");
-    b.onclick=()=>{list.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed","false"));
-      b.setAttribute("aria-pressed","true");
-      res.innerHTML=`<strong>Delegación de ${p}</strong><br>Teléfono, correo y dirección (dato de ejemplo).`};
-    li.append(b);list.append(li);
-  });
-  if(!list.children.length)list.innerHTML="<li>No encontramos esa provincia.</li>";
+$("prov").innerHTML=PROV.map(p=>`<option${p==="Madrid"?" selected":""}>${p}</option>`).join("");
+const cv=$("cv"),c=cv.getContext("2d");
+function wrap(t,x,y,w,lh){const ws=t.split(" ");let l="";for(const k of ws){const n=l+k+" ";if(c.measureText(n).width>w&&l){c.fillText(l.trim(),x,y);l=k+" ";y+=lh}else l=n}c.fillText(l.trim(),x,y);return y}
+function draw(logo){
+ c.fillStyle="#1B2B20";c.fillRect(0,0,1080,1350);
+ c.fillStyle="#58D45A";c.fillRect(0,1130,1080,220);
+ c.textBaseline="alphabetic";c.font="800 460px 'Inter Tight',Arial,sans-serif";c.fillText("29-N",50,520);
+ c.fillStyle="#eef4ee";c.font="700 120px 'Inter Tight',Arial,sans-serif";wrap($("slogan").value,70,720,940,125);
+ c.font="500 46px 'Public Sans',Arial,sans-serif";c.fillStyle="#a7b9ab";c.fillText("Elecciones generales · 29 de noviembre de 2026",70,950);
+ c.fillStyle="#1B2B20";c.font="700 80px 'Inter Tight',Arial,sans-serif";c.fillText($("prov").value,70,1265);
+ if(logo)c.drawImage(logo,780,1170,230,111);else{c.font="800 90px 'Inter Tight',Arial";c.fillText("VOX",800,1265)}
+ try{$("dl").href=cv.toDataURL("image/png");$("dl").hidden=false}catch(e){$("dl").hidden=true}
 }
-q.addEventListener("input",()=>render(q.value));render();
-const nav=document.getElementById("nav"),bg=document.getElementById("burger");
-bg.onclick=()=>{const o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
-nav.querySelectorAll("a").forEach(a=>a.onclick=()=>{nav.classList.remove("open");bg.setAttribute("aria-expanded",false)});
+function make(){const im=new Image();im.onload=()=>draw(im);im.onerror=()=>draw(null);im.src="logo.svg"}
+$("f").addEventListener("submit",e=>{e.preventDefault();(document.fonts?document.fonts.ready:Promise.resolve()).then(make)});
+make();
 </script>
 </body>
 </html>
