@@ -270,3 +270,40 @@ nav a:hover{background:transparent;border-color:rgba(234,244,240,.4);color:var(-
 .ncard.n3 .nimg{aspect-ratio:16/8}.n3 .nbody h3{font-size:1.1rem;margin:.3rem 0 0}.n3 .nbody p{display:none}
 @media(max-width:1000px){.nbento{grid-template-columns:repeat(2,1fr)}.ncard.n1{min-height:400px}.ncard.n2{grid-column:span 2}}
 @media(max-width:640px){.nbento{grid-template-columns:1fr}.ncard.n1,.ncard.n2{grid-column:span 1}.ncard.n1{grid-row:span 1;min-height:360px}.ncard.n2{flex-direction:column}.n2 .nimg{width:100%;aspect-ratio:16/9}}
+
+/* ---- round 11 ---- */
+:root{--r:10px}
+.btn{border-radius:12px}
+.join{border-radius:16px}
+.tarjeta{border-radius:20px}
+.cat,.acts .d,.meta .t,.ballots i{border-radius:6px}
+/* hero: face stays visible, headline sits left */
+.photo-hero{background:linear-gradient(180deg,rgba(8,24,20,0) 0%,rgba(8,24,20,0) 62%,rgba(8,24,20,.65) 90%,var(--bg) 100%),url(hero.jpg) 48% 30%/cover no-repeat,var(--bg)}
+.photo-hero h1{font-size:clamp(3.4rem,9vw,8.6rem)}
+@media(min-width:900px){.ph-in>div{max-width:46%}}
+/* countdown band */
+.dband{background:var(--green);color:var(--dark);padding:clamp(1.6rem,3.5vw,2.6rem) 0}
+.dband .wrap{display:flex;align-items:center;gap:clamp(1.2rem,3vw,2.5rem);flex-wrap:wrap}
+.dband .num{font:italic 900 clamp(4.5rem,11vw,8.5rem)/.85 "Barlow Condensed","Arial Narrow",sans-serif}
+.dband p{font:700 clamp(1.3rem,2.6vw,2.1rem)/1.15 var(--display);max-width:42rem;letter-spacing:-.005em}
+/* hovers: displacement + zoom, no outlines */
+.box:hover,details.prop:hover,.ncard:hover,.pillar:hover{border-color:var(--line);box-shadow:none}
+.ncard .nbody h3,.box h3,details.prop summary>*,.pillar .go{transition:transform .3s ease}
+.ncard:hover .nbody h3{transform:translateX(6px)}
+.ncard:hover .nimg::before{transform:scale(1.07)}
+.ncard .nimg::before{transition:transform .6s ease}
+.box h3,.box p{transition:transform .3s ease}
+.box:hover h3,.box:hover p{transform:translateX(6px)}
+details.prop summary{transition:transform .3s ease}details.prop:hover summary{transform:translateX(6px)}
+.pillar:hover h3{transform:translateX(6px)}.pillar h3{transition:transform .3s ease}
+.tl li:hover,.acts li:hover{background:transparent;box-shadow:none}
+.tl .d,.tl li>div,.acts .d,.acts li>div{transition:transform .3s ease}
+.tl li:hover .d,.tl li:hover>div,.acts li:hover>div{transform:translateX(8px)}
+.acts li:hover .d{transform:scale(1.08)}
+.chip:hover{border-color:var(--line);background:transparent;transform:scale(1.05)}
+.chip.on:hover{background:var(--green)}
+.btn.out:hover,.join .btn.out:hover{background:rgba(234,244,240,.1);border-color:rgba(234,244,240,.4);color:var(--ink)}
+nav a:hover{border-color:transparent;transform:translateY(-2px)}
+nav a{transition:transform .2s ease}
+.side a{transition:transform .25s ease}.side a:hover{border-color:var(--line);background:transparent;transform:translateX(6px)}
+footer a{transition:transform .2s ease}footer a:hover{transform:translateX(5px);text-decoration:none}

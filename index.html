@@ -21,12 +21,16 @@
  <section class="photo-hero" aria-labelledby="h1">
   <div class="wrap ph-in">
    <div>
-    <p class="chip-days">Faltan <b id="cd">--</b> días para el 29-N</p>
-    <h1 id="h1">Recuperemos<br>España</h1>
+    <h1 id="h1">Regenerar<br>España</h1>
     <a class="btn lg" href="propuestas.html">Descubre nuestro programa</a>
    </div>
   </div>
  </section>
+
+ <section class="dband" aria-label="Cuenta atrás"><div class="wrap">
+  <span class="num" id="cd" aria-hidden="true">48</span>
+  <p id="dtxt">Quedan 48 días para meter la papeleta de VOX en la urna y echar al traidor de la Moncloa.</p>
+ </div></section>
 
  <section id="noticias"><div class="wrap">
   <div class="head"><h2>Última hora</h2><a class="more" href="noticias.html">Todas las noticias</a></div>
@@ -106,7 +110,7 @@
 // countdown (hora peninsular, 9:00 del 29-N)
 const T=new Date("2026-11-29T09:00:00+01:00");
 const $=id=>document.getElementById(id);
-function tick(){const d=Math.max(0,T-Date.now()),set=(i,v)=>{const e=$(i);if(e)e.textContent=v};set("cd",Math.ceil(d/864e5))}
+function tick(){const n=new Date(),d=Math.round((new Date(2026,10,29)-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/864e5),b=document.querySelector(".dband");if(!b)return;if(d<0){b.hidden=true;return}$("cd").textContent=d;$("dtxt").textContent=(d===0?"Hoy es el día: mete la papeleta de VOX en la urna.":(d===1?"Queda 1 día":"Quedan "+d+" días")+" para meter la papeleta de VOX en la urna y echar al traidor de la Moncloa.")}
 tick();setInterval(tick,1000);
 // timeline status
 let nextSet=false;
