@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="hero.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,21 +18,19 @@
 <div id="hdr"></div>
 
 <main id="main">
- <div class="wrap hero">
-  <div>
-   <div class="date" aria-hidden="true">29-N</div>
-   <h1>El 29-N, haz que tu voto pese.</h1>
-   <p class="lead">Menos burocracia, más vivienda y más seguridad. Conoce nuestro plan y súmate a la campaña.</p>
-   <div class="cta"><a class="btn" href="#participa">Únete a la campaña</a><a class="btn out" href="propuestas.html">Nuestro plan</a></div>
-  </div>
-  <aside class="count" aria-labelledby="ch">
-   <h2 id="ch">Cuenta atrás hasta el 29-N</h2>
-   <div class="cells" role="timer" aria-live="off">
-    <div><b id="cd">--</b><span>días</span></div><div><b id="ch2">--</b><span>horas</span></div><div><b id="cm">--</b><span>min</span></div><div><b id="cs">--</b><span>seg</span></div>
+ <section class="photo-hero" aria-labelledby="h1">
+  <div class="wrap ph-in">
+   <div>
+    <p class="chip-days">Faltan <b id="cd">--</b> días para el 29-N</p>
+    <h1 id="h1">Regeneremos<br>España</h1>
    </div>
-   <p>La campaña va del 13 al 27 de noviembre. El domingo 29, vota.</p>
-  </aside>
- </div>
+   <a class="pbox" href="propuestas.html">
+    <span class="pt">Nuestras propuestas</span>
+    <span class="pp">Economía, vivienda, seguridad y más. Léelas en pocas líneas.</span>
+    <span class="pgo">Ver propuestas</span>
+   </a>
+  </div>
+ </section>
 
  <section id="noticias"><div class="wrap">
   <div class="head"><h2>Última hora</h2><a class="more" href="noticias.html">Todas las noticias</a></div>
@@ -100,9 +99,7 @@
 // countdown (hora peninsular, 9:00 del 29-N)
 const T=new Date("2026-11-29T09:00:00+01:00");
 const $=id=>document.getElementById(id);
-function tick(){let d=Math.max(0,T-Date.now());
- $("cd").textContent=Math.floor(d/864e5);$("ch2").textContent=String(Math.floor(d/36e5)%24).padStart(2,"0");
- $("cm").textContent=String(Math.floor(d/6e4)%60).padStart(2,"0");$("cs").textContent=String(Math.floor(d/1e3)%60).padStart(2,"0")}
+function tick(){const d=Math.max(0,T-Date.now()),set=(i,v)=>{const e=$(i);if(e)e.textContent=v};set("cd",Math.ceil(d/864e5))}
 tick();setInterval(tick,1000);
 // timeline status
 let nextSet=false;
