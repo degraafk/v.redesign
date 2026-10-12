@@ -235,3 +235,9 @@ canvas:hover{transform:none}
 .tn small{font-size:.72rem;letter-spacing:.12em;font-weight:600;opacity:.75}
 .tn b{font:700 1.25rem var(--display);letter-spacing:.02em}
 @media(max-width:860px){.carnet-sec{grid-template-columns:1fr}}
+
+/* hero headline: caps, poster font */
+.ph-in{grid-template-columns:1fr}
+.photo-hero h1{font-family:"Anton",Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1;font-size:clamp(3.8rem,13vw,10.5rem)}
+.photo-hero .btn.lg{margin-top:2rem}
+.btn.lg{padding:.85rem 1.5rem;font-size:1.05rem}
