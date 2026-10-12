@@ -6,7 +6,7 @@
 <title>VOX · 29-N · Decide tú</title>
 <meta name="description" content="Elecciones generales del 29 de noviembre de 2026: fechas clave, cómo votar y propuestas.">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0B1D19">
+<meta name="theme-color" content="#13261E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500;0,600;0,700;0,800;1,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -122,14 +122,14 @@ $("prov").innerHTML=PROV.map(p=>`<option${p==="Madrid"?" selected":""}>${p}</opt
 const cv=$("cv"),c=cv.getContext("2d");
 function wrap(t,x,y,w,lh){const ws=t.split(" ");let l="";for(const k of ws){const n=l+k+" ";if(c.measureText(n).width>w&&l){c.fillText(l.trim(),x,y);l=k+" ";y+=lh}else l=n}c.fillText(l.trim(),x,y);return y}
 function draw(logo){
- c.fillStyle="#0B1D19";c.fillRect(0,0,1080,1350);
+ c.fillStyle="#13261E";c.fillRect(0,0,1080,1350);
  c.fillStyle="#58D45A";c.fillRect(0,1130,1080,220);
  c.textBaseline="alphabetic";c.font="800 460px 'Inter',Arial,sans-serif";c.fillText("29-N",50,520);
- c.fillStyle="#ecf5f2";c.font="700 120px 'Inter',Arial,sans-serif";wrap($("slogan").value,70,720,940,125);
- c.font="500 46px 'Public Sans',Arial,sans-serif";c.fillStyle="#9db8b0";c.fillText("Elecciones generales · 29 de noviembre de 2026",70,950);
- c.fillStyle="#0B1D19";c.font="700 80px 'Inter',Arial,sans-serif";c.fillText($("prov").value,70,1265);
+ c.fillStyle="#edf5f0";c.font="700 120px 'Inter',Arial,sans-serif";wrap($("slogan").value,70,720,940,125);
+ c.font="500 46px 'Public Sans',Arial,sans-serif";c.fillStyle="#a2b9ae";c.fillText("Elecciones generales · 29 de noviembre de 2026",70,950);
+ c.fillStyle="#13261E";c.font="700 80px 'Inter',Arial,sans-serif";c.fillText($("prov").value,70,1265);
  if(logo)c.drawImage(logo,780,1170,230,111);else{c.font="800 90px 'Inter',Arial";c.fillText("VOX",800,1265)}
- try{$("dl").href=cv.toDataURL("image/png");$("dl").hidden=false}catch(e){$("dl").hidden=true}
+ try{$("dl").href=cv.toDataURL("image/png");$("dl").hidden=false}catch(e){$("dl").hidden=true};flow([cv])
 }
 function make(){const im=new Image();im.onload=()=>draw(im);im.onerror=()=>draw(null);im.src="logo.svg"}
 $("f").addEventListener("submit",e=>{e.preventDefault();(document.fonts?document.fonts.ready:Promise.resolve()).then(make)});

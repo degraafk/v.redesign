@@ -54,3 +54,26 @@ const nav=document.getElementById("nav"),bg=document.getElementById("burger");
 bg.onclick=()=>{const o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
 nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");bg.setAttribute("aria-expanded",false)}));
 const L=document.getElementById("latest");if(L){const all=byPriority(),pick=(p,n)=>all.filter(x=>x.p===p).slice(0,n);L.innerHTML=[...pick(1,1),...pick(2,2),...pick(3,3)].map(ncard).join("")};
+
+/* motion helpers */
+const EASE="cubic-bezier(.22,1,.36,1)",calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const flow=els=>{if(calm)return;els.forEach((el,i)=>el.animate({opacity:[0,1],transform:["translateY(12px)","none"]},{duration:520,delay:Math.min(i,10)*45,easing:EASE,fill:"backwards"}))};
+/* accordion with animated height */
+document.querySelectorAll("details.prop").forEach(d=>{
+ const s=d.querySelector("summary"),rest=[...d.children].filter(c=>c!==s);let a=null;
+ d.classList.toggle("is-open",d.open);
+ const closedH=()=>{const c=getComputedStyle(d);return s.offsetHeight+parseFloat(c.paddingTop)+parseFloat(c.paddingBottom)+parseFloat(c.borderTopWidth)+parseFloat(c.borderBottomWidth)};
+ s.addEventListener("click",e=>{
+  e.preventDefault();
+  const opening=!d.open;d.classList.toggle("is-open",opening);
+  if(calm){d.open=opening;return}
+  const from=d.offsetHeight;if(a)a.cancel();
+  d.style.overflow="hidden";
+  if(opening)d.open=true;
+  const to=opening?d.offsetHeight:closedH();
+  a=d.animate({height:[from+"px",to+"px"]},{duration:520,easing:EASE});
+  rest.forEach(r=>r.animate({opacity:opening?[0,1]:[1,0]},{duration:opening?520:260,easing:EASE,fill:"both"}));
+  const done=()=>{a=null;d.style.overflow="";if(!opening)d.open=false;rest.forEach(r=>r.getAnimations().forEach(x=>x.cancel()))};
+  a.onfinish=done;a.oncancel=()=>{d.style.overflow=""};
+ });
+});
