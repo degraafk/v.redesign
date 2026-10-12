@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#1B2B20">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="hero.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -90,6 +90,17 @@
    <ul><li>Voluntariado de campaña</li><li>Apoderados e interventores</li><li>Reparto en tu barrio</li></ul>
   </div>
  </div></section>
+<section id="carnet" class="alt"><div class="wrap carnet-sec">
+  <div>
+   <h2>Tu carnet, en el móvil.</h2>
+   <p>Afíliate en dos minutos y lleva el carnet digital en la cartera de tu teléfono.</p>
+   <div class="cta"><a class="btn" href="#">Afiliarme</a></div>
+  </div>
+  <div class="tarjeta" aria-hidden="true">
+   <img src="logo-dark.svg" alt="" width="96" height="46">
+   <div class="tn"><small>CARNET DE AFILIADO</small><b>NOMBRE APELLIDOS</b><small>Nº 000000 · ALTA 2026</small></div>
+  </div>
+ </div></section>
 </main>
 
 <div id="ftr"></div>
@@ -117,11 +128,11 @@ function wrap(t,x,y,w,lh){const ws=t.split(" ");let l="";for(const k of ws){cons
 function draw(logo){
  c.fillStyle="#1B2B20";c.fillRect(0,0,1080,1350);
  c.fillStyle="#58D45A";c.fillRect(0,1130,1080,220);
- c.textBaseline="alphabetic";c.font="800 460px 'Inter Tight',Arial,sans-serif";c.fillText("29-N",50,520);
- c.fillStyle="#eef4ee";c.font="700 120px 'Inter Tight',Arial,sans-serif";wrap($("slogan").value,70,720,940,125);
+ c.textBaseline="alphabetic";c.font="800 460px 'Inter',Arial,sans-serif";c.fillText("29-N",50,520);
+ c.fillStyle="#eef4ee";c.font="700 120px 'Inter',Arial,sans-serif";wrap($("slogan").value,70,720,940,125);
  c.font="500 46px 'Public Sans',Arial,sans-serif";c.fillStyle="#a7b9ab";c.fillText("Elecciones generales · 29 de noviembre de 2026",70,950);
- c.fillStyle="#1B2B20";c.font="700 80px 'Inter Tight',Arial,sans-serif";c.fillText($("prov").value,70,1265);
- if(logo)c.drawImage(logo,780,1170,230,111);else{c.font="800 90px 'Inter Tight',Arial";c.fillText("VOX",800,1265)}
+ c.fillStyle="#1B2B20";c.font="700 80px 'Inter',Arial,sans-serif";c.fillText($("prov").value,70,1265);
+ if(logo)c.drawImage(logo,780,1170,230,111);else{c.font="800 90px 'Inter',Arial";c.fillText("VOX",800,1265)}
  try{$("dl").href=cv.toDataURL("image/png");$("dl").hidden=false}catch(e){$("dl").hidden=true}
 }
 function make(){const im=new Image();im.onload=()=>draw(im);im.onerror=()=>draw(null);im.src="logo.svg"}
