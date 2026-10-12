@@ -40,14 +40,36 @@ const page=location.pathname.split("/").pop()||"index.html";
 const on=h=>page===h?' class="on"':'';
 document.getElementById("hdr").outerHTML=`<header class="site-header"><div class="wrap bar">
 <a class="logo" href="index.html" aria-label="VOX, inicio"><img src="logo.svg" alt="VOX" width="68" height="33"></a>
-<nav id="nav" aria-label="Principal"><a href="noticias.html"${on("noticias.html")}>Noticias</a><a href="propuestas.html"${on("propuestas.html")}>Propuestas</a><a href="actos.html"${on("actos.html")}>Actos</a><a href="index.html#cartel">Materiales</a></nav>
+<nav id="nav" aria-label="Principal"><a href="noticias.html"${on("noticias.html")}>Noticias</a><a href="propuestas.html"${on("propuestas.html")}>Propuestas</a><a href="actos.html"${on("actos.html")}>Actos</a></nav>
+<a class="btn gold" href="#dona" data-donate>Donar</a>
 <a class="btn" href="index.html#participa">Únete</a>
 <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button></div></header>`;
 document.getElementById("ftr").outerHTML=`<footer id="contacto"><div class="wrap cols">
 <div><a class="logo" href="index.html"><img src="logo.svg" alt="VOX" width="60" height="29"></a><p>Concepto de rediseño. Sin vínculo oficial.</p></div>
-<div><a href="noticias.html">Noticias</a><a href="propuestas.html">Propuestas</a><a href="actos.html">Actos</a><a href="index.html#cartel">Materiales</a></div>
+<div><a href="noticias.html">Noticias</a><a href="propuestas.html">Propuestas</a><a href="actos.html">Actos</a></div>
 <div><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a><a href="#">Accesibilidad</a></div></div></footer>`;
 const nav=document.getElementById("nav"),bg=document.getElementById("burger");
 bg.onclick=()=>{const o=nav.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
 nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");bg.setAttribute("aria-expanded",false)}));
 const L=document.getElementById("latest");if(L)L.innerHTML=prio().slice(0,7).map(x=>ncard(x,1)).join("");
+
+/* ---- donativos: botón flotante + ventana ---- */
+document.body.insertAdjacentHTML("beforeend",`<button class="fab btn gold" data-donate aria-label="Donar">Donar</button>
+<dialog class="dlg" id="dlg" aria-labelledby="dt"><div class="dform"><button class="dx" id="dx" aria-label="Cerrar">×</button>
+<h2 id="dt">Apoya la campaña</h2><p>Tu donativo financia actos, material y presencia en cada provincia.</p>
+<div class="amts" role="group" aria-label="Importe">${[25,50,100,350].map(a=>`<button type="button" class="amt" data-a="${a}">${a} €</button>`).join("")}</div>
+<label class="oth">Otra cantidad<input type="number" id="oa" min="1" inputmode="numeric" placeholder="€"></label>
+<button type="button" class="btn gold lg" id="go">Donar <span id="ga">50 €</span></button>
+<p class="dnote" id="dn">Maqueta: aquí se conectaría la pasarela de pago. Antes de recibir donativos reales, revisa la normativa de financiación de partidos.</p></div></dialog>`);
+(()=>{const dlg=document.getElementById("dlg"),fab=document.querySelector(".fab"),oIn=document.getElementById("oa"),gAmt=document.getElementById("ga"),note=document.getElementById("dn");let amt=50;
+const NOTE=note.textContent;
+const setA=a=>{amt=a;gAmt.textContent=a+" €";dlg.querySelectorAll(".amt").forEach(b=>b.classList.toggle("on",+b.dataset.a===a))};
+setA(50);
+document.addEventListener("click",e=>{const t=e.target.closest("[data-donate]");if(t){e.preventDefault();setA(+t.dataset.amount||amt);oIn.value="";note.textContent=NOTE;dlg.showModal()}});
+dlg.querySelector(".amts").addEventListener("click",e=>{const b=e.target.closest(".amt");if(b){setA(+b.dataset.a);oIn.value=""}});
+oIn.addEventListener("input",()=>{const v=Math.floor(+oIn.value);if(v>0){amt=v;gAmt.textContent=v+" €";dlg.querySelectorAll(".amt").forEach(b=>b.classList.remove("on"))}});
+document.getElementById("dx").onclick=()=>dlg.close();
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+document.getElementById("go").onclick=()=>{note.textContent="Gracias. Esto es una maqueta: no se ha realizado ningún cobro."};
+addEventListener("scroll",()=>fab.classList.toggle("show",scrollY>500),{passive:true});
+})();

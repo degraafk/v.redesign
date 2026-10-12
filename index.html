@@ -69,28 +69,27 @@
   </ul>
  </div></section>
 
- <section id="cartel"><div class="wrap tool">
-  <div>
-   <h2>Materiales de campaña</h2>
-   <p>Crea tu cartel con el lema y tu provincia, listo para redes o para imprimir.</p>
-   <form class="form" id="f">
-    <label>Lema<select id="slogan"><option>Decide tú.</option><option>Este 29-N, vota.</option><option>Tu voto cuenta.</option><option>Habla con tu voto.</option></select></label>
-    <label>Provincia<select id="prov"></select></label>
-    <button class="btn" type="submit">Crear cartel</button>
-    <a class="btn out" id="dl" download="cartel-29n.png" hidden>Descargar imagen</a>
-   </form>
-  </div>
-  <div class="preview"><canvas id="cv" width="1080" height="1350" role="img" aria-label="Vista previa del cartel"></canvas></div>
- </div></section>
-
  <section id="participa"><div class="wrap">
   <div class="join">
    <div><h2>El 29-N, cuenta contigo.</h2><p>Ayúdanos en campaña o el día de las elecciones. Hay sitio para todos.</p>
-    <div class="cta"><a class="btn" href="#">Quiero colaborar</a><a class="btn out" href="#">Hacer una donación</a></div></div>
+    <div class="cta"><a class="btn" href="#">Quiero colaborar</a><a class="btn gold" href="#dona" data-donate>Hacer una donación</a></div></div>
    <ul><li>Voluntariado de campaña</li><li>Apoderados e interventores</li><li>Reparto en tu barrio</li></ul>
   </div>
  </div></section>
-<section id="carnet" class="alt"><div class="wrap carnet-sec">
+<section id="dona" class="alt"><div class="wrap dona">
+  <div>
+   <h2>Tu donativo mueve la campaña.</h2>
+   <p>Cada euro financia actos, material y presencia en cada provincia. Elige una cantidad.</p>
+  </div>
+  <div class="damts">
+   <button class="damt" data-donate data-amount="25">25 €</button>
+   <button class="damt" data-donate data-amount="50">50 €</button>
+   <button class="damt" data-donate data-amount="100">100 €</button>
+   <button class="damt" data-donate data-amount="350">350 €</button>
+  </div>
+ </div></section>
+
+ <section id="carnet"><div class="wrap carnet-sec">
   <div>
    <h2>Tu carnet, en el móvil.</h2>
    <p>Afíliate en dos minutos y lleva el carnet digital en la cartera de tu teléfono.</p>
@@ -120,24 +119,6 @@ document.querySelectorAll("#tl li").forEach(li=>{
  else if(!nextSet){nextSet=true;li.classList.add("next");tag.textContent="Próxima fecha"}
  else tag.textContent="Pendiente";
 });
-// poster generator
-const PROV=["A Coruña","Álava","Albacete","Alicante","Almería","Asturias","Ávila","Badajoz","Baleares","Barcelona","Burgos","Cáceres","Cádiz","Cantabria","Castellón","Ceuta","Ciudad Real","Córdoba","Cuenca","Girona","Granada","Guadalajara","Gipuzkoa","Huelva","Huesca","Jaén","La Rioja","Las Palmas","León","Lleida","Lugo","Madrid","Málaga","Melilla","Murcia","Navarra","Ourense","Palencia","Pontevedra","Salamanca","S. C. Tenerife","Segovia","Sevilla","Soria","Tarragona","Teruel","Toledo","Valencia","Valladolid","Bizkaia","Zamora","Zaragoza"];
-$("prov").innerHTML=PROV.map(p=>`<option${p==="Madrid"?" selected":""}>${p}</option>`).join("");
-const cv=$("cv"),c=cv.getContext("2d");
-function wrap(t,x,y,w,lh){const ws=t.split(" ");let l="";for(const k of ws){const n=l+k+" ";if(c.measureText(n).width>w&&l){c.fillText(l.trim(),x,y);l=k+" ";y+=lh}else l=n}c.fillText(l.trim(),x,y);return y}
-function draw(logo){
- c.fillStyle="#0C201B";c.fillRect(0,0,1080,1350);
- c.fillStyle="#58D45A";c.fillRect(0,1130,1080,220);
- c.textBaseline="alphabetic";c.font="800 460px 'Inter',Arial,sans-serif";c.fillText("29-N",50,520);
- c.fillStyle="#eef4ee";c.font="700 120px 'Inter',Arial,sans-serif";wrap($("slogan").value,70,720,940,125);
- c.font="500 46px 'Public Sans',Arial,sans-serif";c.fillStyle="#a7b9ab";c.fillText("Elecciones generales · 29 de noviembre de 2026",70,950);
- c.fillStyle="#0C201B";c.font="700 80px 'Inter',Arial,sans-serif";c.fillText($("prov").value,70,1265);
- if(logo)c.drawImage(logo,780,1170,230,111);else{c.font="800 90px 'Inter',Arial";c.fillText("VOX",800,1265)}
- try{$("dl").href=cv.toDataURL("image/png");$("dl").hidden=false}catch(e){$("dl").hidden=true}
-}
-function make(){const im=new Image();im.onload=()=>draw(im);im.onerror=()=>draw(null);im.src="logo.svg"}
-$("f").addEventListener("submit",e=>{e.preventDefault();(document.fonts?document.fonts.ready:Promise.resolve()).then(make)});
-make();
 </script>
 </body>
 </html>
