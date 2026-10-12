@@ -1,5 +1,5 @@
 :root{--bg:#13261E;--bg2:#0e1c16;--surface:#1c3329;--ink:#edf5f0;--muted:#a2b9ae;--line:#2a4437;--green:#58D45A;--dark:#13261E;--r:6px;--max:1440px;--ease:cubic-bezier(.22,1,.36,1);
---display:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"Public Sans",system-ui,sans-serif}
+--display:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"Source Serif 4",Georgia,"Times New Roman",serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
@@ -435,3 +435,24 @@ canvas{border-radius:20px}.join{border-radius:28px}.tarjeta{border-radius:18px}
 .bento .p1 .nbody{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:1.6rem 1.8rem 1.9rem}
 .bento .p1:not(.pic) .nbody h3{font-size:clamp(2rem,3.6vw,3.3rem);line-height:1.02;max-width:22ch}
 .bento .p1:not(.pic) .nbody p{font-size:1.15rem}
+
+/* ---- round 9: mixed shapes, two typefaces ---- */
+/* type: Archivo for interface and headings, Source Serif for anything you read */
+body{line-height:1.65}
+nav a,.nmeta,.crumb,.acts small,.acts .when span,.acts .hr,.form label,.fsel label,.form select,.fsel select,.more,footer a,.side a,.tn,.skip{font-family:var(--display)}
+.nbody p,details.prop p{font-size:1.02rem}
+
+/* shape: structure is rectangular, controls are round, photos carry one big corner */
+.box,details.prop,.count,.empty,.acts li,.ncard,canvas,nav a,.side a{border-radius:0}
+.ncard.pic{border-radius:0 40px 0 0}
+.pimg{border-radius:0 44px 0 0}
+.art .hero-img{border-radius:0 64px 0 0}
+.join{border-radius:0 64px 0 0}
+.btn,.join .btn,.site-header .btn,.chip,.burger,.form select,.fsel select{border-radius:999px}
+.form select,.fsel select{padding-inline:1.2rem}
+.tarjeta{border-radius:18px}
+
+/* propuestas page: photo beside text */
+.psec.has-fig{display:grid;grid-template-columns:1fr minmax(240px,34%);gap:1.5rem 3rem;align-items:start}
+.pfig{aspect-ratio:4/5;background:var(--img) var(--pos,center)/cover no-repeat;border-radius:0 56px 0 0}
+@media(max-width:820px){.psec.has-fig{grid-template-columns:1fr}.pfig{aspect-ratio:16/10;order:-1}}

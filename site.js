@@ -15,9 +15,9 @@ const NEWS=[
 ];
 const PROPS=[
 {id:"economia",t:"Economía",s:"Menos trámites y menos cargas para quien emprende y contrata.",l:["Ventanilla única digital para empresas","Simplificar altas y licencias de autónomos","Reducir cargas sobre el trabajo y el ahorro"]},
-{id:"vivienda",t:"Vivienda",s:"Más oferta y más seguridad jurídica para propietarios e inquilinos.",l:["Liberar suelo y agilizar licencias","Plazos claros en los procesos de desahucio","Ayudas a la primera compra de jóvenes"]},
-{id:"campo-y-mar",t:"Campo y mar",s:"Menos burocracia para quien produce alimentos.",l:["Reducir informes y trámites agrarios","Defender los productos españoles en Bruselas","Más infraestructura hídrica"]},
-{id:"seguridad",t:"Seguridad",s:"Medios y respaldo para las fuerzas de seguridad.",l:["Más plantillas y mejor equipamiento","Coordinación entre cuerpos","Respuesta judicial más rápida"]},
+{id:"vivienda",i:"img/vivienda.jpg",o:"50% 45%",t:"Vivienda",s:"Más oferta y más seguridad jurídica para propietarios e inquilinos.",l:["Liberar suelo y agilizar licencias","Plazos claros en los procesos de desahucio","Ayudas a la primera compra de jóvenes"]},
+{id:"campo-y-mar",i:"img/campo.jpg",o:"33% 30%",t:"Campo y mar",s:"Menos burocracia para quien produce alimentos.",l:["Reducir informes y trámites agrarios","Defender los productos españoles en Bruselas","Más infraestructura hídrica"]},
+{id:"seguridad",i:"img/noche.jpg",o:"40% 35%",t:"Seguridad",s:"Medios y respaldo para las fuerzas de seguridad.",l:["Más plantillas y mejor equipamiento","Coordinación entre cuerpos","Respuesta judicial más rápida"]},
 {id:"familia",t:"Familia",s:"Apoyo directo a quienes quieren formar una familia.",l:["Deducciones por hijo a cargo","Conciliación más flexible","Ayudas para familias numerosas"]},
 {id:"energia",t:"Energía",s:"Suministro estable y precios asumibles.",l:["Mix energético con todas las fuentes disponibles","Menos impuestos en la factura","Mejores redes eléctricas"]},
 {id:"educacion",t:"Educación",s:"Más exigencia y más libertad de elección.",l:["Evaluaciones comunes en todo el país","Libertad de elección de centro","Refuerzo de la formación profesional"]},
