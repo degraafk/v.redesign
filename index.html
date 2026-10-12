@@ -31,6 +31,7 @@
   <span class="num" id="cd" aria-hidden="true">48</span>
   <p id="dtxt">Quedan 48 días para meter la papeleta de VOX en la urna y echar al traidor de la Moncloa.</p>
  </div></section>
+<div class="marquee" aria-hidden="true"><div class="mq"><div class="mq-in"><span>Regenerar España</span><i></i><span class="o">29-N</span><i></i><span>Tu voto cuenta</span><i></i><span>Regenerar España</span><i></i><span class="o">29-N</span><i></i><span>Tu voto cuenta</span><i></i></div><div class="mq-in"><span>Regenerar España</span><i></i><span class="o">29-N</span><i></i><span>Tu voto cuenta</span><i></i><span>Regenerar España</span><i></i><span class="o">29-N</span><i></i><span>Tu voto cuenta</span><i></i></div></div></div>
 
  <section id="noticias"><div class="wrap">
   <div class="head"><h2>Última hora</h2><a class="more" href="noticias.html">Todas las noticias</a></div>
@@ -38,6 +39,8 @@
  </div></section>
 
 
+
+ <section id="manifiesto"><div class="wrap"><p class="mani">España necesita menos trámites, más vivienda y más seguridad. Es hora de regenerar lo que no funciona y proteger lo que sí.</p></div></section>
 
  <section id="plan" class="alt"><div class="wrap">
   <div class="head"><h2>Nuestro plan en tres ideas</h2><a class="more" href="propuestas.html">Ver todas las propuestas</a></div>
@@ -109,7 +112,7 @@
 // countdown (hora peninsular, 9:00 del 29-N)
 const T=new Date("2026-11-29T09:00:00+01:00");
 const $=id=>document.getElementById(id);
-function tick(){const n=new Date(),d=Math.round((new Date(2026,10,29)-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/864e5),b=document.querySelector(".dband");if(!b)return;if(d<0){b.hidden=true;return}$("cd").textContent=d;$("dtxt").textContent=(d===0?"Hoy es el día: mete la papeleta de VOX en la urna.":(d===1?"Queda 1 día":"Quedan "+d+" días")+" para meter la papeleta de VOX en la urna y echar al traidor de la Moncloa.")}
+function tick(){const n=new Date(),d=Math.round((new Date(2026,10,29)-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/864e5),b=document.querySelector(".dband");if(!b)return;if(d<0){b.hidden=true;return}if(!window.__cdLock)$("cd").textContent=d;$("dtxt").textContent=(d===0?"Hoy es el día: mete la papeleta de VOX en la urna.":(d===1?"Queda 1 día":"Quedan "+d+" días")+" para meter la papeleta de VOX en la urna y echar al traidor de la Moncloa.")}
 tick();setInterval(tick,1000);
 // timeline status
 let nextSet=false;
