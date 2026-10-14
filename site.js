@@ -53,8 +53,7 @@ nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classLi
 const L=document.getElementById("latest");if(L)L.innerHTML=prio().slice(0,7).map(x=>ncard(x,1)).join("");
 
 /* ---- donativos: botón flotante + ventana ---- */
-document.body.insertAdjacentHTML("beforeend",`<button class="dtab" data-donate aria-label="Donar">Donar</button>
-<dialog class="dlg" id="dlg" aria-labelledby="dt"><div class="dform"><button class="dx" id="dx" aria-label="Cerrar">×</button>
+document.body.insertAdjacentHTML("beforeend",`<dialog class="dlg" id="dlg" aria-labelledby="dt"><div class="dform"><button class="dx" id="dx" aria-label="Cerrar">×</button>
 <h2 id="dt">Apoya la campaña</h2><p>Tu donativo financia actos, material y presencia en cada provincia.</p>
 <div class="amts" role="group" aria-label="Importe">${[25,50,100,350].map(a=>`<button type="button" class="amt" data-a="${a}">${a} €</button>`).join("")}</div>
 <label class="oth">Otra cantidad<input type="number" id="oa" min="1" inputmode="numeric" placeholder="€"></label>
