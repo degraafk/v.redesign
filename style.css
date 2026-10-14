@@ -1,5 +1,5 @@
 :root{--bg:#0C201B;--bg2:#081814;--surface:#12302A;--ink:#eaf4f0;--muted:#9fbab1;--line:#1f433a;--green:#58D45A;--dark:#0C201B;--r:6px;--max:1180px;
---display:"Inter","Helvetica Neue",Arial,sans-serif;--body:"Public Sans",system-ui,sans-serif}
+--display:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"Archivo",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
@@ -238,7 +238,7 @@ canvas:hover{transform:none}
 
 /* hero headline: caps, poster font */
 .ph-in{grid-template-columns:1fr}
-.photo-hero h1{font-family:"Anton",Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1;font-size:clamp(3.8rem,13vw,10.5rem)}
+.photo-hero h1{font-family:"Archivo",Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;line-height:1;font-size:clamp(3.8rem,13vw,10.5rem)}
 .photo-hero .btn.lg{margin-top:2rem}
 .btn.lg{padding:.85rem 1.5rem;font-size:1.05rem}
 
@@ -246,7 +246,7 @@ canvas:hover{transform:none}
 .logo img{transition:transform .25s ease}.logo:hover img{transform:scale(1.08)}
 /* hero: lighter overlay so the photo stays intense */
 .photo-hero{background:linear-gradient(180deg,rgba(8,24,20,0) 0%,rgba(8,24,20,0) 58%,rgba(8,24,20,.7) 88%,var(--bg) 100%),url(hero.jpg) 60% 30%/cover no-repeat,var(--bg)}
-.photo-hero h1{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:.005em;line-height:.92;font-size:clamp(4.2rem,15vw,12.5rem);}
+.photo-hero h1{font-family:"Archivo","Arial Narrow",Impact,sans-serif;font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:.005em;line-height:.92;font-size:clamp(4.2rem,15vw,12.5rem);}
 /* hovers: outline only, no green text */
 .ncard:hover h3,details.prop summary:hover,.side a:hover{color:inherit}
 footer a:hover,.crumb a:hover{color:inherit;text-decoration:underline}
@@ -284,7 +284,7 @@ nav a:hover{background:transparent;border-color:rgba(234,244,240,.4);color:var(-
 /* countdown band */
 .dband{background:var(--green);color:var(--dark);padding:clamp(1.6rem,3.5vw,2.6rem) 0}
 .dband .wrap{display:flex;align-items:center;gap:clamp(1.2rem,3vw,2.5rem);flex-wrap:wrap}
-.dband .num{font:italic 900 clamp(4.5rem,11vw,8.5rem)/.85 "Barlow Condensed","Arial Narrow",sans-serif}
+.dband .num{font:italic 900 clamp(4.5rem,11vw,8.5rem)/.85 "Archivo","Arial Narrow",sans-serif}
 .dband p{font:700 clamp(1.3rem,2.6vw,2.1rem)/1.15 var(--display);max-width:42rem;letter-spacing:-.005em}
 /* hovers: displacement + zoom, no outlines */
 .box:hover,details.prop:hover,.ncard:hover,.pillar:hover{border-color:var(--line);box-shadow:none}
@@ -361,7 +361,7 @@ footer a{transition:transform .2s ease}footer a:hover{transform:translateX(5px);
 .side a.on{border-color:var(--green);color:var(--ink);font-weight:600}
 .side a.on i{color:var(--green)}
 .psec{display:grid;grid-template-columns:110px 1fr;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:3.5rem;margin-bottom:3.5rem}
-.pnum{font:italic 900 clamp(4.5rem,8vw,7rem)/.85 "Barlow Condensed","Arial Narrow",sans-serif;color:transparent;-webkit-text-stroke:1.5px var(--green)}
+.pnum{font:italic 900 clamp(4.5rem,8vw,7rem)/.85 "Archivo","Arial Narrow",sans-serif;color:transparent;-webkit-text-stroke:1.5px var(--green)}
 .psec h2{font-size:clamp(2rem,4vw,3.1rem);margin-bottom:.8rem}
 .plead{font-size:1.3rem;color:var(--ink);max-width:40rem;margin-bottom:1.8rem}
 .mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
@@ -394,7 +394,7 @@ footer a{transition:transform .2s ease}footer a:hover{transform:translateX(5px);
 .marquee{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:1.1rem 0}
 .mq{display:flex;width:max-content}
 .mq-in{display:flex;align-items:center;gap:2rem;padding-right:2rem;flex:none}
-.mq-in span{font:italic 900 clamp(2.4rem,6vw,5rem)/1 "Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;white-space:nowrap}
+.mq-in span{font:italic 900 clamp(2.4rem,6vw,5rem)/1 "Archivo","Arial Narrow",sans-serif;text-transform:uppercase;white-space:nowrap}
 .mq-in span.o{color:transparent;-webkit-text-stroke:1.5px var(--green)}
 .mq-in i{width:.7rem;height:.7rem;background:var(--green);transform:rotate(45deg);flex:none}
 /* scrubbed manifesto */
@@ -407,7 +407,7 @@ footer a{transition:transform .2s ease}footer a:hover{transform:translateX(5px);
 .htrack .box{flex:none;width:min(620px,78vw);min-height:400px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:2rem}
 .htrack .box h3{font-size:clamp(2rem,3.4vw,3rem);margin-bottom:.8rem}
 .htrack .box p{font-size:1.15rem;max-width:30rem}
-.hn{position:absolute;top:1rem;left:1.6rem;font:italic 900 clamp(5rem,9vw,8rem)/1 "Barlow Condensed","Arial Narrow",sans-serif;color:transparent;-webkit-text-stroke:1.5px var(--green)}
+.hn{position:absolute;top:1rem;left:1.6rem;font:italic 900 clamp(5rem,9vw,8rem)/1 "Archivo","Arial Narrow",sans-serif;color:transparent;-webkit-text-stroke:1.5px var(--green)}
 .three:not(.htrack) .hn{display:none}
 
 /* ---- round 16 ---- */
@@ -430,7 +430,7 @@ details.prop.is-open summary::after{transform:rotate(45deg)}
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
 .stat{padding:2.4rem 1.5rem;border-right:1px solid var(--line)}.stat:last-child{border-right:0}
-.stat b{display:block;font:italic 900 clamp(3.6rem,8vw,7rem)/.9 "Barlow Condensed","Arial Narrow",sans-serif;color:var(--green)}
+.stat b{display:block;font:italic 900 clamp(3.6rem,8vw,7rem)/.9 "Archivo","Arial Narrow",sans-serif;color:var(--green)}
 .stat span{display:block;margin-top:.6rem;color:var(--muted);font-weight:500}
 @media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 /* parallax photo band */
@@ -443,4 +443,38 @@ details.prop.is-open summary::after{transform:rotate(45deg)}
 .wm{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
 .wi{display:inline-block}
 .bigtype{overflow:hidden;white-space:nowrap;padding-bottom:2rem}
-.bigtype span{display:inline-block;font:italic 900 clamp(4rem,15vw,14rem)/.9 "Barlow Condensed","Arial Narrow",sans-serif;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(88,212,90,.5)}
+.bigtype span{display:inline-block;font:italic 900 clamp(4rem,15vw,14rem)/.9 "Archivo","Arial Narrow",sans-serif;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(88,212,90,.5)}
+
+/* ---- round 17: Archivo + Source Serif, white sections, calmer motion ---- */
+:root{--display:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"Archivo","Helvetica Neue",Arial,sans-serif;--serif:"Source Serif 4",Georgia,"Times New Roman",serif}
+body{font-stretch:100%}
+h1,h2,h3{font-weight:700;letter-spacing:-.01em}
+.mq-in span,.pnum,.dband .num,.stat b,.hn,.bigtype span{font-family:"Archivo",Impact,sans-serif;font-stretch:75%}
+.photo-hero h1{font-family:"Archivo",Impact,sans-serif;font-stretch:75%;font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:0;line-height:.95;font-size:clamp(3.2rem,8.4vw,8rem)}
+.photo-hero .btn.lg{margin-top:2rem}
+.mani,.plead,.pp-lead,.body p{font-family:var(--serif);font-weight:600}
+.mani{letter-spacing:0;line-height:1.18}
+.plead,.pp-lead{font-weight:500}
+.scrollcue i::after{display:none}
+/* marquee: pure CSS */
+.mq{animation:mq 45s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+.marquee[data-dir=r] .mq{animation-direction:reverse}
+@media(prefers-reduced-motion:reduce){.mq{animation:none}}
+/* white sections */
+.light,.light.alt{--bg:#fff;--bg2:#f2f6f4;--surface:#f4f8f6;--ink:#0C201B;--muted:#4d625a;--line:#d8e2de;background:#fff;color:var(--ink)}
+.light .more,.light .stat b,.light .side a.on i{color:#177a35}
+.light .more:hover{border-color:#177a35}
+.light .pnum{-webkit-text-stroke-color:#177a35}
+.light .btn.out{color:var(--ink);border-color:rgba(12,32,27,.3)}
+.light .btn.out:hover{background:rgba(12,32,27,.06);border-color:rgba(12,32,27,.6);color:var(--ink)}
+.light .ncard.n1 .nbody,.light .ncard.n1 h3{color:#fff}
+.light .ncard.n1 time,.light .ncard.n1 p{color:#d6e8e2}
+.light .body p{color:#1b312a}
+.light .chip{color:var(--ink)}
+.light .chip:hover{border-color:var(--ink)}
+.light .chip.on{color:#0C201B;border-color:var(--green)}
+.light .acts li:hover,.light .tl li:hover{box-shadow:none}
+.light .fsel select{background:#fff;color:var(--ink);border-color:var(--line)}
+.light .ncard:hover,.light .mcard:hover{border-color:#b9c9c3}
+.pcta{padding:3rem 0 5rem}
